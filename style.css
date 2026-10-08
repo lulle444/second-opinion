@@ -286,6 +286,7 @@ a { color: inherit; }
 .section-alt { background: var(--paper-2); }
 .section-head { max-width: 680px; margin-bottom: 52px; }
 .section-head p { font-size: 1.1rem; }
+.section-head-wide { max-width: none; }
 .section-head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; max-width: none; }
 .section-head-row > div { max-width: 640px; }
 
