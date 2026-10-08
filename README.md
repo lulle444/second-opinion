@@ -9,6 +9,6 @@ Statisk hjemmeside for Second Opinion (rådgivning om kontorejendomme).
 
 Ingen build. Lokal forhåndsvisning: `node server.js` → http://localhost:5173
 
-Deployes på Vercel (projekt `second-opinion`) fra `main`; `vercel.json` slår clean URLs til.
+Deployes på Vercel (projekt `second-opinion`, forbundet til dette repo) fra `main`; `vercel.json` slår clean URLs til.
 
 Pushes til `main` deployes automatisk til https://second-opinion-ruby.vercel.app.
