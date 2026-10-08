@@ -638,3 +638,79 @@ a.read-more { text-decoration: none; }
   .other-service { padding: 22px 22px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
 }
+
+/* ---------- subpage hero visual ---------- */
+.page-hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; align-items: center; }
+.page-hero .hero-actions { margin-top: 28px; }
+.page-visual { position: relative; justify-self: end; width: 100%; max-width: 500px; }
+.page-illustration { display: block; width: 100%; height: auto; }
+/* when real photos arrive: <img class="page-photo"> replaces the svg */
+.page-photo { display: block; width: 100%; aspect-ratio: 6 / 5; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+
+.fact-card {
+  position: relative;
+  width: fit-content;
+  margin: -26px 0 0 -20px;
+  display: flex;
+  gap: 4px;
+  padding: 16px 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+.fact-card div { padding: 0 16px; border-left: 1px solid var(--line); line-height: 1.25; }
+.fact-card div:first-child { border-left: 0; }
+.fact-card strong { display: block; font-family: var(--serif); font-size: 1.45rem; font-weight: 600; color: var(--navy); white-space: nowrap; }
+.fact-card span { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+
+/* ---------- quote band ---------- */
+.quote-band { position: relative; overflow: hidden; padding: 96px 0; background: var(--navy); color: #fff; }
+.quote-band::before {
+  content: '';
+  position: absolute;
+  left: -80px;
+  bottom: -160px;
+  width: 380px;
+  height: 380px;
+  border: 2px solid rgba(214, 189, 134, 0.22);
+  border-radius: 28px;
+  transform: rotate(-10deg);
+}
+.quote-band figure { position: relative; margin: 0 auto; max-width: 900px; text-align: center; }
+.quote-band blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff;
+}
+.quote-band blockquote::before { content: '“'; display: block; font-size: 4.5rem; line-height: 0.6; color: var(--gold-2); margin-bottom: 22px; }
+.quote-band figcaption { margin-top: 26px; font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); }
+.quote-band figcaption strong { color: #fff; }
+
+.client-group-wide { padding: 36px 36px 14px; }
+.client-group-wide .name-wall li { font-size: 0.98rem; padding: 10px 18px; }
+
+@media (max-width: 900px) {
+  .page-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .page-visual { justify-self: start; max-width: 460px; }
+}
+@media (max-width: 760px) {
+  .fact-card { width: auto; margin: -18px 0 0; justify-content: space-between; }
+  .fact-card div { padding: 0 10px; }
+  .fact-card strong { font-size: 1.2rem; }
+  .fact-card span { font-size: 0.74rem; white-space: normal; }
+  .client-group-wide { padding: 24px 20px 10px; }
+  .quote-band { padding: 72px 0; }
+}
+
+/* ---------- LinkedIn links ---------- */
+.li-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.li-link svg { width: 16px; height: 16px; flex: none; color: var(--gold-2); }
+.li-link:hover { text-decoration: underline; }
+.li-link-dark { margin-top: 14px; font-size: 0.93rem; font-weight: 600; color: var(--navy); }
+.li-link-dark svg { color: #0a66c2; }
+.aside-contact .li-link-dark { display: flex; }
+.cta-card .li-link { font-size: 1rem; }
