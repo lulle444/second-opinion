@@ -870,3 +870,15 @@ a.read-more { text-decoration: none; }
   .about-quote { order: 2; }
 }
 .about-quote .pull-quote::before { font-size: 3.6rem; margin-bottom: 8px; }
+
+/* hero portrait: smaller and centred inside its gold frame */
+.hero-figure { max-width: 330px; margin-right: 14px; }
+.hero-figure::before { inset: -14px; transform: none; border-radius: calc(var(--radius) + 8px); }
+.hero-figure figcaption { left: 16px; right: 16px; bottom: 16px; }
+@media (max-width: 900px) {
+  .hero-figure { max-width: 300px; margin: 14px 0 14px 14px; }
+}
+@media (max-width: 760px) {
+  .hero-figure { max-width: 270px; }
+  .hero-figure figcaption { left: 12px; right: 12px; bottom: 12px; padding: 10px 14px; }
+}

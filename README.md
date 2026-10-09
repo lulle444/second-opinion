@@ -1,4 +1,4 @@
-# Second Opinion — Property Advice
+# Second Opinion
 
 Statisk hjemmeside for Second Opinion (rådgivning om kontorejendomme).
 
