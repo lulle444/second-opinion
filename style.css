@@ -722,3 +722,36 @@ a.read-more { text-decoration: none; }
   .brand img { height: 40px; }
   .brand-footer img { width: 230px; height: auto; }
 }
+
+/* ---------- cut-out portrait on a designed panel ---------- */
+.portrait-panel {
+  position: relative;
+  aspect-ratio: 900 / 1097;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(60% 45% at 55% 28%, rgba(255, 255, 255, 0.75), transparent 70%),
+    linear-gradient(165deg, #efe8da 0%, #e3d6bd 100%);
+  box-shadow: var(--shadow-lg);
+}
+.portrait-panel::before {
+  /* faint facade lines behind the portrait */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(15, 34, 54, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 34, 54, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 75%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 75%);
+}
+.hero-figure .portrait-panel img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
