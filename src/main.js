@@ -36,5 +36,33 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('in'));
 }
 
+// Count the key figures up from zero the first time they scroll into view.
+const counters = document.querySelectorAll('.stat-num[data-count]');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (counters.length && 'IntersectionObserver' in window && !reduceMotion) {
+  const fmt = (n, decimals) => n.toFixed(decimals).replace('.', ',');
+  const run = (el) => {
+    const target = parseFloat(el.dataset.count);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const suffix = el.dataset.suffix || '';
+    const final = el.dataset.final || el.textContent;
+    const start = performance.now();
+    const dur = 1400;
+    const tick = (now) => {
+      const t = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = t < 1 ? fmt(target * eased, decimals) + suffix : final;
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const co = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { run(entry.target); co.unobserve(entry.target); }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach((el) => co.observe(el));
+}
+
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
