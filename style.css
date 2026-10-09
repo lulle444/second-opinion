@@ -714,3 +714,11 @@ a.read-more { text-decoration: none; }
 .li-link-dark svg { color: #0a66c2; }
 .aside-contact .li-link-dark { display: flex; }
 .cta-card .li-link { font-size: 1rem; }
+
+/* ---------- logo images ---------- */
+.brand img { display: block; height: 50px; width: auto; }
+.brand-footer img { height: auto; width: 260px; }
+@media (max-width: 760px) {
+  .brand img { height: 40px; }
+  .brand-footer img { width: 230px; height: auto; }
+}
