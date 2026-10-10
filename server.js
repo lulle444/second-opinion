@@ -14,7 +14,7 @@ const MIME = {
   '.json': 'application/json; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
-  '.ico': 'image/x-icon',
+  '.ico': 'image/x-icon', '.woff2': 'font/woff2',
 };
 
 http.createServer((req, res) => {
