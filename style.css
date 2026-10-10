@@ -941,3 +941,49 @@ a.read-more { text-decoration: none; }
 .consent-inner:focus { outline: none; }
 .cookie-table code { white-space: nowrap; }
 @media (max-width: 760px) { .cookie-table { min-width: 560px; } }
+
+/* ---------- testimonial ---------- */
+.testimonial {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  margin: 0;
+  padding: 48px 52px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.section-white .testimonial { background: var(--paper); }
+.testimonial-source { text-align: center; padding-right: 56px; border-right: 1px solid var(--line); }
+.testimonial-logo { width: 150px; height: auto; margin: 0 auto 20px; }
+.testimonial-source figcaption { line-height: 1.35; }
+.testimonial-source strong { display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--navy); }
+.testimonial-source span { font-size: 0.88rem; color: var(--muted); }
+.testimonial-quote { position: relative; margin: 0; }
+.testimonial-quote::before {
+  content: '“';
+  position: absolute;
+  left: -6px;
+  top: -42px;
+  font-family: var(--serif);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--gold-2);
+}
+.testimonial-quote p { font-family: var(--serif); font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; color: var(--ink); }
+.testimonial-quote p:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .testimonial { grid-template-columns: 1fr; gap: 36px; padding: 40px 32px; }
+  .testimonial-source { order: 2; padding: 28px 0 0; border-right: 0; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 20px; text-align: left; }
+  .testimonial-logo { width: 96px; margin: 0; }
+  .testimonial-quote { padding-top: 24px; }
+}
+@media (max-width: 760px) {
+  .testimonial { padding: 32px 22px; }
+}
+.testimonial-quote { padding-top: 44px; }
+.testimonial-quote::before { top: -14px; left: -4px; font-size: 4.6rem; }
+@media (max-width: 900px) { .testimonial-quote { padding-top: 44px; } }
