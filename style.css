@@ -1310,3 +1310,11 @@ a.read-more { text-decoration: none; }
 .trust-names li + li::before { content: none; }
 .trust-names li:not(:last-child)::after { content: ''; display: inline-block; width: 4px; height: 4px; margin-left: 13px; vertical-align: middle; background: var(--gold-2); transform: rotate(45deg); }
 .trust-names { gap: 6px 13px; }
+
+/* om jesper: small round portrait instead of the large cutout */
+.om-figure { margin: 0; justify-self: center; max-width: none; }
+.om-portrait { width: 220px; height: 220px; margin-bottom: 0; }
+@media (max-width: 900px) {
+  .om-figure { justify-self: start; }
+  .om-portrait { width: 140px; height: 140px; }
+}
