@@ -24,7 +24,7 @@
   <link rel="preload" href="/assets/fonts/newsreader-6.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/style.css" />
   <script>document.documentElement.classList.add('js');</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Second Opinion", "description": "Rådgivning om kontorejendomme til ejere og lejere – med 25 års specialistviden.", "url": "https://second-opinion-ruby.vercel.app/", "image": "https://second-opinion-ruby.vercel.app/assets/og-image.jpg", "logo": "https://second-opinion-ruby.vercel.app/assets/logo.png", "telephone": "+4531182437", "vatID": "DK46731948", "address": {"@type": "PostalAddress", "streetAddress": "Linstowsvej 13", "postalCode": "2960", "addressLocality": "Rungsted Kyst", "addressCountry": "DK"}, "founder": {"@type": "Person", "name": "Jesper Norgart", "jobTitle": "Founder", "sameAs": ["https://www.linkedin.com/in/norgart"], "image": "https://second-opinion-ruby.vercel.app/assets/jesper-norgart.jpg"}, "knowsAbout": ["Kontorejendomme", "Erhvervsudlejning", "Projektudvikling", "Erhvervslejekontrakter"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Second Opinion", "description": "Rådgivning om kontorejendomme til ejere og lejere – med 25+ års specialistviden.", "url": "https://second-opinion-ruby.vercel.app/", "image": "https://second-opinion-ruby.vercel.app/assets/og-image.jpg", "logo": "https://second-opinion-ruby.vercel.app/assets/logo.png", "telephone": "+4531182437", "vatID": "DK46731948", "address": {"@type": "PostalAddress", "streetAddress": "Linstowsvej 13", "postalCode": "2960", "addressLocality": "Rungsted Kyst", "addressCountry": "DK"}, "founder": {"@type": "Person", "name": "Jesper Norgart", "jobTitle": "Founder", "sameAs": ["https://www.linkedin.com/in/norgart"], "image": "https://second-opinion-ruby.vercel.app/assets/jesper-norgart.jpg"}, "knowsAbout": ["Kontorejendomme", "Erhvervsudlejning", "Projektudvikling", "Erhvervslejekontrakter"]}</script>
 </head>
 <body>
   <a class="skip-link" href="#indhold">Spring til indhold</a>
@@ -46,7 +46,7 @@
 
   <main id="indhold">
     <section class="hero">
-      <div class="wrap hero-grid hero-solo hero-with-proof">
+      <div class="wrap hero-grid hero-solo hero-with-visual">
         <div class="hero-text">
           <p class="eyebrow reveal">Rådgivning om kontorejendomme</p>
           <h1 class="reveal reveal-d1">Tryg rådgivning om kontorejendomme – for <em>ejere</em> og <em>lejere</em></h1>
@@ -59,13 +59,13 @@
             <a class="btn btn-outline" href="#ydelser">Se ydelser</a>
           </div>
         </div>
-        <figure class="hero-proof reveal reveal-d2">
-          <blockquote>“Vi kan varmt anbefale Jesper Norgart som rådgiver inden for erhvervslokaler.”</blockquote>
-          <figcaption>
-            <img src="/assets/kongeegen-logo.png" width="300" height="180" alt="Kongeegen" />
-            <span><strong>Niels Østergaard</strong>Ejendomschef, Kongeegen</span>
-          </figcaption>
-        </figure>
+        <div class="hero-visual reveal reveal-d2">
+          <img class="hero-illu" src="/assets/illu-hero.svg" width="668" height="574" alt="" fetchpriority="high" />
+          <a class="hero-card" href="/om-jesper">
+            <img src="/assets/jesper-norgart-avatar.webp" width="56" height="56" alt="" />
+            <span><strong>Jesper Norgart</strong><small>Founder · 25+ års erfaring</small></span>
+          </a>
+        </div>
       </div>
       <div class="wrap trust reveal">
         <span class="trust-label">Har rådgivet bl.a.</span>
@@ -124,6 +124,33 @@
       </div>
     </section>
 
+    <section class="section section-white process" aria-labelledby="proces-titel">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Sådan foregår det</p>
+          <h2 id="proces-titel">Fra første samtale til resultat</h2>
+          <p>Et enkelt forløb – uanset om I ejer en kontorejendom eller lejer jeres lokaler.</p>
+        </div>
+        <ol class="process-steps">
+          <li class="reveal">
+            <span class="process-no">1</span>
+            <h3>Uforpligtende samtale</h3>
+            <p>Vi tager en snak om jeres ejendom eller lejemål, og hvad I gerne vil opnå – helt uforpligtende.</p>
+          </li>
+          <li class="reveal reveal-d1">
+            <span class="process-no">2</span>
+            <h3>Analyse af jeres situation</h3>
+            <p>Jeg gennemgår lejekontrakter, markedslejer, ejendommens muligheder og konkurrerende lejemål.</p>
+          </li>
+          <li class="reveal reveal-d2">
+            <span class="process-no">3</span>
+            <h3>Konkret anbefaling – og handling</h3>
+            <p>I får en klar anbefaling, og jeg hjælper hele vejen til forhandling, udlejning eller nye lokaler.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <section class="section section-alt" id="om" aria-labelledby="om-titel">
       <div class="wrap about-grid">
         <div class="reveal about-quote">
@@ -138,8 +165,12 @@
         <div class="reveal reveal-d1">
           <p class="eyebrow">Om Jesper</p>
           <h2 id="om-titel">Erfaring, netværk og resultater</h2>
-          <p>Jeg har en baggrund som selvstændig erhvervsmægler med mere end 25 års erfaring inden for salg og udlejning af erhvervsejendomme.</p>
-          <p>Mit speciale er kontorejendomme – både nybyggeri og projektudvikling af eksisterende bygninger, hvor detaljerne skal på plads allerede i de indledende faser, når en bygning skal transformeres til tidssvarende og efterspurgte kontorlejemål.</p>
+          <p>Mit speciale er kontorejendomme – nybyggeri, projektudvikling og udlejning, hvor detaljerne skal på plads allerede i de første faser.</p>
+          <ol class="timeline timeline-mini">
+            <li><span class="tl-when">25+ år</span><div class="tl-body"><strong>Erhvervsmægler</strong><p>Salg og udlejning af erhvervsejendomme.</p></div></li>
+            <li><span class="tl-when">2005–2024</span><div class="tl-body"><strong>Lintrup &amp; Norgart</strong><p>Medstifter og partner.</p></div></li>
+            <li class="tl-now"><span class="tl-when">I dag</span><div class="tl-body"><strong>Second Opinion</strong><p>Uafhængig rådgivning om kontor.</p></div></li>
+          </ol>
 
         </div>
       </div>
@@ -213,33 +244,15 @@
           <h2 id="kunder-titel">Kunder gennem karrieren</h2>
           <p>Jeg har rådgivet en lang række ejendomsselskaber, asset managers og virksomheder – nationale som internationale.</p>
         </div>
-        <div class="clients">
-          <div class="client-group reveal">
+        <div class="clients-compact reveal">
+          <div class="clients-row">
             <h3>Ejendomsselskaber og asset managers</h3>
-            <ul class="name-grid">
-          <li>PFA</li>
-          <li>Danske Bank</li>
-          <li>Nordea Ejendomme</li>
-          <li>Jeudan</li>
-          <li>Sampension</li>
-          <li>Skanska</li>
-          <li>C.W. Obel Ejendomme</li>
-          <li>Castellum</li>
-        </ul>
+            <ul class="ref-pills"><li><strong>PFA</strong></li><li><strong>Danske Bank</strong></li><li><strong>Nordea Ejendomme</strong></li><li><strong>Jeudan</strong></li><li><strong>Sampension</strong></li><li><strong>Skanska</strong></li><li><strong>C.W. Obel Ejendomme</strong></li><li><strong>Castellum</strong></li><li><strong>Velliv</strong></li><li><strong>Niam</strong></li></ul>
             <a class="read-more" href="/udlejerraadgivning#kunder">Se alle <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
-          <div class="client-group reveal reveal-d1">
+          <div class="clients-row">
             <h3>Lejere</h3>
-            <ul class="name-grid">
-          <li>Novo Nordisk</li>
-          <li>Vestas</li>
-          <li>Shell</li>
-          <li>Nokia</li>
-          <li>Red Bull</li>
-          <li>eBay</li>
-          <li>Københavns Kommune</li>
-          <li>Bygningsstyrelsen</li>
-        </ul>
+            <ul class="ref-pills"><li><strong>Novo Nordisk</strong></li><li><strong>Vestas</strong></li><li><strong>Shell</strong></li><li><strong>Nokia</strong></li><li><strong>Red Bull</strong></li><li><strong>eBay</strong></li><li><strong>Københavns Kommune</strong></li><li><strong>Bygningsstyrelsen</strong></li><li><strong>Red Barnet</strong></li></ul>
             <a class="read-more" href="/lejerraadgivning#kunder">Se alle <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
@@ -284,7 +297,7 @@
         <div>
           <a href="/" class="brand brand-footer" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal-light.webp" width="521" height="100" alt="Second Opinion" loading="lazy" /></a>
           <p class="footer-tagline">Indsigt · Strategi · Værdi</p>
-          <p class="footer-about">Rådgivning om kontorejendomme til ejere og lejere – med 25 års specialistviden.</p>
+          <p class="footer-about">Rådgivning om kontorejendomme til ejere og lejere – med 25+ års specialistviden.</p>
         </div>
         <div>
           <h2>Ydelser</h2>
