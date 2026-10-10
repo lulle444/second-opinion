@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" data-ga-id="">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,14 +70,32 @@
         <p><strong>Retsgrundlag:</strong> Behandlingen sker for at kunne indgå eller opfylde en aftale med dig eller den virksomhed, du repræsenterer (databeskyttelsesforordningens artikel 6, stk. 1, litra b), og på grundlag af vores legitime interesse i at besvare henvendelser og drive vores virksomhed (artikel 6, stk. 1, litra f). Regnskabsmateriale opbevarer vi for at overholde bogføringsloven (artikel 6, stk. 1, litra c).</p>
 
         <h2>Når du besøger hjemmesiden</h2>
-        <p>Hjemmesiden bruger <strong>ingen cookies</strong> og ingen værktøjer til statistik, annoncering eller sporing. Skrifttyper og billeder hentes fra vores egen server, så dine oplysninger ikke sendes til tredjeparter som fx Google.</p>
         <p>Hjemmesiden drives hos hostingudbyderen Vercel Inc. Som led i driften registrerer Vercel automatisk tekniske oplysninger i serverlogs, fx IP-adresse, browsertype og tidspunkt for besøget. Oplysningerne bruges til at levere hjemmesiden og beskytte den mod misbrug og opbevares kun i en begrænset periode.</p>
         <p><strong>Retsgrundlag:</strong> Vores legitime interesse i at kunne drive en sikker og stabil hjemmeside (artikel 6, stk. 1, litra f).</p>
-        <p>Klikker du på et link til LinkedIn, gælder LinkedIns egen privatlivspolitik.</p>
+        <p>Skrifttyper og billeder hentes fra vores egen server. Klikker du på et link til LinkedIn, gælder LinkedIns egen privatlivspolitik.</p>
+
+        <h2 id="cookies">Cookies og statistik (Google Analytics)</h2>
+        <p>Hvis du giver samtykke, bruger vi Google Analytics fra Google Ireland Limited til at lave statistik over, hvordan hjemmesiden bruges – fx hvilke sider der besøges og hvor længe, hvordan du er kommet ind på siden, hvilken type enhed og browser du bruger, og din omtrentlige geografiske placering (land og by). Statistikken bruges til at forbedre hjemmesiden og vores markedsføring. Vi bruger ikke oplysningerne til at identificere dig personligt.</p>
+        <p>Google Analytics indlæses først, når du har klikket "Accepter statistik" i cookiebanneret. Afviser du, sættes der ingen statistikcookies. Du kan til enhver tid ændre eller trække dit samtykke tilbage under <strong>"Cookie-indstillinger"</strong> nederst på siden.</p>
+        <p><strong>Retsgrundlag:</strong> Dit samtykke, jf. cookiebekendtgørelsen og databeskyttelsesforordningens artikel 6, stk. 1, litra a.</p>
+        <p>Oplysningerne opbevares i Google Analytics i op til 14 måneder. Google kan behandle oplysningerne i USA. Google LLC er certificeret under EU-U.S. Data Privacy Framework, og overførslen sker på dette grundlag og EU-Kommissionens standardkontraktbestemmelser. Læs mere i <a href="https://policies.google.com/privacy?hl=da" target="_blank" rel="noopener">Googles privatlivspolitik</a>.</p>
+
+        <div class="table-wrap">
+          <table class="cookie-table">
+            <thead>
+              <tr><th>Navn</th><th>Udbyder</th><th>Formål</th><th>Varighed</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>_ga</code></td><td>Google</td><td>Statistik – adskiller besøgende</td><td>2 år</td></tr>
+              <tr><td><code>_ga_&lt;id&gt;</code></td><td>Google</td><td>Statistik – husker sessionen</td><td>2 år</td></tr>
+              <tr><td><code>so-consent</code></td><td>Second Opinion</td><td>Nødvendig – husker dit cookievalg (gemmes lokalt i din browser)</td><td>Indtil du sletter det</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <h2>Hvem får adgang til oplysningerne</h2>
         <p>Vi sælger eller videregiver ikke dine oplysninger til andre med henblik på markedsføring. Vi benytter leverandører, der behandler oplysninger på vores vegne som databehandlere – fx til hosting af hjemmesiden, e-mail og it-drift samt regnskab. De må kun bruge oplysningerne efter vores instruks.</p>
-        <p>Vercel Inc. har hovedsæde i USA. Overførsel af oplysninger til USA sker på grundlag af EU-U.S. Data Privacy Framework og/eller EU-Kommissionens standardkontraktbestemmelser.</p>
+        <p>Vercel Inc. har hovedsæde i USA. Overførsel af oplysninger til USA sker på grundlag af EU-U.S. Data Privacy Framework og/eller EU-Kommissionens standardkontraktbestemmelser. Giver du samtykke til statistik, behandler Google oplysningerne som beskrevet ovenfor.</p>
 
         <h2>Hvor længe gemmer vi oplysningerne</h2>
         <ul class="legal-list">
@@ -136,7 +154,7 @@
       </div>
       <div class="footer-bottom">
         <span>© <span id="year">2026</span> Second Opinion · CVR-nr. 46731948</span>
-        <span><a href="/privatlivspolitik">Privatlivspolitik</a></span>
+        <span class="footer-legal"><a href="/privatlivspolitik">Privatlivspolitik</a><button type="button" class="link-button" data-cookie-settings hidden>Cookie-indstillinger</button></span>
       </div>
     </div>
   </footer>

@@ -892,3 +892,52 @@ a.read-more { text-decoration: none; }
 .legal-updated { margin-top: 2em; font-size: 0.9rem; font-style: italic; }
 .footer-bottom a { color: rgba(255, 255, 255, 0.7); text-decoration: none; }
 .footer-bottom a:hover { color: #fff; text-decoration: underline; }
+
+/* ---------- cookie consent ---------- */
+.consent {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.consent-inner {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 720px;
+  padding: 24px 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+.consent-title { margin: 0 0 6px; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+.consent p { font-size: 0.95rem; margin-bottom: 16px; }
+.consent a { color: var(--navy); }
+.consent-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+.consent-actions .btn { padding: 11px 22px; font-size: 0.95rem; }
+
+.footer-legal { display: inline-flex; gap: 18px; flex-wrap: wrap; }
+.link-button { padding: 0; background: none; border: 0; font: inherit; color: rgba(255, 255, 255, 0.7); cursor: pointer; }
+.link-button:hover { color: #fff; text-decoration: underline; }
+
+/* cookie table on the privacy page */
+.table-wrap { overflow-x: auto; margin: 8px 0 1.4em; }
+.cookie-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.cookie-table th, .cookie-table td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); color: var(--ink); }
+.cookie-table th { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--paper); }
+.cookie-table tr:last-child td { border-bottom: 0; }
+.cookie-table code { font-size: 0.88rem; color: var(--navy); }
+
+@media (max-width: 760px) {
+  .consent { left: 10px; right: 10px; bottom: 10px; }
+  .consent-inner { padding: 20px; }
+  .consent-actions .btn { flex: 1; justify-content: center; }
+}
+.consent-inner:focus { outline: none; }
+.cookie-table code { white-space: nowrap; }
+@media (max-width: 760px) { .cookie-table { min-width: 560px; } }

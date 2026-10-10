@@ -66,3 +66,78 @@ if (counters.length && 'IntersectionObserver' in window && !reduceMotion) {
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Cookie consent + Google Analytics. Nothing is loaded and no banner is shown
+// until a GA4 measurement ID is set on <html data-ga-id="G-...">; GA only loads
+// after the visitor accepts. The choice itself is kept in localStorage.
+(() => {
+  const GA_ID = document.documentElement.dataset.gaId;
+  if (!GA_ID) return;
+  const KEY = 'so-consent';
+  const read = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
+  const write = (v) => { try { localStorage.setItem(KEY, v); } catch (e) { /* private mode */ } };
+
+  const loadGA = () => {
+    if (window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+    const sc = document.createElement('script');
+    sc.async = true;
+    sc.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+    document.head.appendChild(sc);
+  };
+
+  const clearGACookies = () => {
+    const host = location.hostname;
+    const domains = ['', host, '.' + host, '.' + host.split('.').slice(-2).join('.')];
+    document.cookie.split(';').map((c) => c.split('=')[0].trim())
+      .filter((n) => n === '_ga' || n.startsWith('_ga_'))
+      .forEach((n) => domains.forEach((d) => {
+        document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+      }));
+  };
+
+  let banner;
+  const close = () => { if (banner) { banner.remove(); banner = null; } };
+  const open = () => {
+    if (banner) return;
+    banner = document.createElement('div');
+    banner.className = 'consent';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie-samtykke');
+    banner.innerHTML =
+      '<div class="consent-inner" tabindex="-1">' +
+        '<p class="consent-title">Må vi bruge statistikcookies?</p>' +
+        '<p>Vi vil gerne bruge Google Analytics til at se, hvordan hjemmesiden bruges, så vi kan gøre den bedre. ' +
+        'Det sætter cookies, og oplysningerne behandles af Google. Du kan altid ændre dit valg under ' +
+        '"Cookie-indstillinger" nederst på siden. <a href="/privatlivspolitik#cookies">Læs mere</a></p>' +
+        '<div class="consent-actions">' +
+          '<button type="button" class="btn btn-primary" data-consent="denied">Afvis</button>' +
+          '<button type="button" class="btn btn-primary" data-consent="granted">Accepter statistik</button>' +
+        '</div>' +
+      '</div>';
+    banner.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-consent]');
+      if (!btn) return;
+      const choice = btn.dataset.consent;
+      const before = read();
+      write(choice);
+      close();
+      if (choice === 'granted') loadGA();
+      else if (before === 'granted') { clearGACookies(); location.reload(); }
+    });
+    document.body.appendChild(banner);
+    banner.querySelector('.consent-inner').focus({ preventScroll: true });
+  };
+
+  document.querySelectorAll('[data-cookie-settings]').forEach((b) => {
+    b.hidden = false;
+    b.addEventListener('click', open);
+  });
+
+  const choice = read();
+  if (choice === 'granted') loadGA();
+  else if (choice !== 'denied') open();
+})();
