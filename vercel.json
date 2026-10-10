@@ -55,6 +55,11 @@
       "source": "/lejere",
       "destination": "/lejerraadgivning",
       "permanent": true
+    },
+    {
+      "source": "/om-jesper",
+      "destination": "/om-jesper-norgart",
+      "permanent": true
     }
   ]
 }
