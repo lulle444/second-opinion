@@ -1054,3 +1054,38 @@ a.read-more { text-decoration: none; }
 @media (max-width: 900px) {
   .om-figure { justify-self: start; max-width: 260px; }
 }
+
+/* ---------- case ---------- */
+.case {
+  position: relative;
+  margin: 40px 0 8px;
+  padding: 32px 34px 28px;
+  background: var(--navy);
+  border-radius: var(--radius);
+  color: #fff;
+  overflow: hidden;
+}
+.case::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(214, 189, 134, 0.25);
+  border-radius: 22px;
+  transform: rotate(12deg);
+}
+.case .eyebrow { color: var(--gold-2); }
+.prose .case h3, .case h3 { margin: 0 0 0.5em; font-size: 1.5rem; color: #fff; }
+.prose .case p, .case p { color: rgba(255, 255, 255, 0.8); }
+.case-stats { display: flex; flex-wrap: wrap; gap: 12px 36px; margin: 22px 0 20px; padding: 18px 0; list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.12); border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+.case-stats strong { display: block; font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--gold-2); }
+.case-stats span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); }
+.case-quote { margin: 0 0 12px; font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: #fff; }
+.prose .case .case-source, .case-source { margin: 0; font-size: 0.82rem; color: rgba(255, 255, 255, 0.55); }
+@media (max-width: 760px) {
+  .case { padding: 26px 22px 22px; }
+  .case-stats { gap: 10px 24px; }
+  .case-stats strong { font-size: 1.6rem; }
+}
