@@ -20,7 +20,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="preload" href="/assets/fonts/inter-2.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/newsreader-6.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/style.css" />
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Second Opinion", "description": "Rådgivning om kontorejendomme til ejere og lejere – med 25 års specialistviden.", "url": "https://second-opinion-ruby.vercel.app/", "image": "https://second-opinion-ruby.vercel.app/assets/og-image.jpg", "logo": "https://second-opinion-ruby.vercel.app/assets/logo.png", "telephone": "+4531182437", "vatID": "DK46731948", "address": {"@type": "PostalAddress", "streetAddress": "Linstowsvej 13", "postalCode": "2960", "addressLocality": "Rungsted Kyst", "addressCountry": "DK"}, "founder": {"@type": "Person", "name": "Jesper Norgart", "jobTitle": "Erhvervsmægler", "sameAs": ["https://www.linkedin.com/in/norgart"], "image": "https://second-opinion-ruby.vercel.app/assets/jesper-norgart.jpg"}, "knowsAbout": ["Kontorejendomme", "Erhvervsudlejning", "Projektudvikling", "Erhvervslejekontrakter"]}</script>
@@ -30,7 +31,7 @@
 
   <header class="site-header" id="site-header">
     <div class="wrap header-inner">
-      <a href="/" class="brand" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal.png" width="621" height="120" alt="Second Opinion" /></a>
+      <a href="/" class="brand" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal.webp" width="521" height="100" alt="Second Opinion" /></a>
       <nav class="main-nav" id="main-nav" aria-label="Hovedmenu">
         <a href="/ejere">For ejere</a>
         <a href="/lejere">For lejere</a>
@@ -60,7 +61,7 @@
         </div>
         <figure class="hero-figure reveal reveal-d2">
           <div class="portrait-panel">
-            <img src="/assets/jesper-cutout.webp" width="900" height="1097" alt="Portræt af Jesper Norgart" fetchpriority="high" />
+            <img src="/assets/jesper-cutout.webp" srcset="/assets/jesper-cutout-600.webp 600w, /assets/jesper-cutout.webp 900w" sizes="(max-width: 760px) 270px, 330px" width="900" height="1097" alt="Portræt af Jesper Norgart" fetchpriority="high" />
           </div>
           <figcaption><strong>Jesper Norgart</strong><span>Erhvervsmægler · 25+ års erfaring</span></figcaption>
         </figure>
@@ -130,12 +131,7 @@
           <h2 id="om-titel">Erfaring, netværk og resultater</h2>
           <p>Jeg har en baggrund som selvstændig erhvervsmægler med mere end 25 års erfaring inden for salg og udlejning af erhvervsejendomme.</p>
           <p>Mit speciale er kontorejendomme – både nybyggeri og projektudvikling af eksisterende bygninger, hvor detaljerne skal på plads allerede i de indledende faser, når en bygning skal transformeres til tidssvarende og efterspurgte kontorlejemål.</p>
-          <ul class="highlights">
-            <li><strong>Specialist i kontor</strong><span>Nybyggeri, projektudvikling og udlejning</span></li>
-            <li><strong>Stort netværk</strong><span>Et værdifuldt netværk i ejendomsbranchen</span></li>
-            <li><strong>Kontante resultater</strong><span>Kontante og konstante resultater gennem 25 år</span></li>
-            <li><strong>Begge sider af bordet</strong><span>Rådgivning til både ejere og lejere</span></li>
-          </ul>
+
         </div>
       </div>
       <div class="wrap testimonial-wrap">
@@ -261,7 +257,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <a href="/" class="brand brand-footer" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal-light.png" width="621" height="120" alt="Second Opinion" /></a>
+          <a href="/" class="brand brand-footer" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal-light.webp" width="521" height="100" alt="Second Opinion" loading="lazy" /></a>
           <p class="footer-tagline">Indsigt · Strategi · Værdi</p>
           <p class="footer-about">Rådgivning om kontorejendomme til ejere og lejere – med 25 års specialistviden.</p>
         </div>

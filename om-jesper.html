@@ -20,7 +20,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="preload" href="/assets/fonts/inter-2.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/newsreader-6.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/style.css" />
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jesper Norgart", "jobTitle": "Erhvervsmægler", "url": "https://second-opinion-ruby.vercel.app/om-jesper", "image": "https://second-opinion-ruby.vercel.app/assets/jesper-cutout.webp", "telephone": "+4531182437", "sameAs": ["https://www.linkedin.com/in/norgart"], "worksFor": {"@type": "ProfessionalService", "name": "Second Opinion", "url": "https://second-opinion-ruby.vercel.app/"}, "knowsAbout": ["Kontorejendomme", "Erhvervsudlejning", "Projektudvikling", "Erhvervslejekontrakter"]}</script>
@@ -30,7 +31,7 @@
 
   <header class="site-header" id="site-header">
     <div class="wrap header-inner">
-      <a href="/" class="brand" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal.png" width="621" height="120" alt="Second Opinion" /></a>
+      <a href="/" class="brand" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal.webp" width="521" height="100" alt="Second Opinion" /></a>
       <nav class="main-nav" id="main-nav" aria-label="Hovedmenu">
         <a href="/ejere">For ejere</a>
         <a href="/lejere">For lejere</a>
@@ -58,7 +59,7 @@
         </div>
         <figure class="hero-figure om-figure">
           <div class="portrait-panel">
-            <img src="/assets/jesper-cutout.webp" width="900" height="1097" alt="Portræt af Jesper Norgart" fetchpriority="high" />
+            <img src="/assets/jesper-cutout.webp" srcset="/assets/jesper-cutout-600.webp 600w, /assets/jesper-cutout.webp 900w" sizes="(max-width: 760px) 270px, 330px" width="900" height="1097" alt="Portræt af Jesper Norgart" fetchpriority="high" />
           </div>
         </figure>
       </div>
@@ -233,7 +234,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <a href="/" class="brand brand-footer" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal-light.png" width="621" height="120" alt="Second Opinion" /></a>
+          <a href="/" class="brand brand-footer" aria-label="Second Opinion – forside"><img src="/assets/logo-horizontal-light.webp" width="521" height="100" alt="Second Opinion" loading="lazy" /></a>
           <p class="footer-tagline">Indsigt · Strategi · Værdi</p>
           <p class="footer-about">Rådgivning om kontorejendomme til ejere og lejere – med 25 års specialistviden.</p>
         </div>
