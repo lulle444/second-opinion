@@ -1028,3 +1028,19 @@ a.read-more { text-decoration: none; }
   .highlights li { padding: 16px 18px; }
   .cta-card { padding: 24px; }
 }
+
+/* testimonial: compact card with the heading inside */
+.testimonial-wrap { margin-top: 48px; }
+.testimonial { padding: 36px 44px; gap: 44px; grid-template-columns: 210px minmax(0, 1fr); }
+.testimonial-source { padding-right: 44px; }
+.testimonial-body .eyebrow { margin-bottom: 14px; }
+.testimonial-quote { padding-top: 0; padding-left: 40px; }
+.testimonial-quote::before { top: -12px; left: -6px; font-size: 3.8rem; }
+.testimonial-quote p { font-size: clamp(1.05rem, 1.45vw, 1.2rem); margin-bottom: 0.8em; }
+@media (max-width: 900px) {
+  .testimonial-wrap { margin-top: 36px; }
+  .testimonial { padding: 28px 26px; gap: 24px; grid-template-columns: 1fr; }
+  .testimonial-source { padding: 22px 0 0; }
+  .testimonial-quote { padding-top: 0; padding-left: 30px; }
+  .testimonial-quote::before { font-size: 3rem; top: -8px; }
+}
