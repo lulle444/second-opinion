@@ -1044,3 +1044,13 @@ a.read-more { text-decoration: none; }
   .testimonial-quote { padding-top: 0; padding-left: 30px; }
   .testimonial-quote::before { font-size: 3rem; top: -8px; }
 }
+
+/* ---------- om jesper ---------- */
+.om-figure { justify-self: end; max-width: 300px; }
+.about-links { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 24px; margin-top: 26px; }
+.about-links .li-link-dark { margin-top: 0; }
+.service-links { display: grid; gap: 14px; margin-top: 40px; }
+.service-links .other-service { margin-top: 0; }
+@media (max-width: 900px) {
+  .om-figure { justify-self: start; max-width: 260px; }
+}
