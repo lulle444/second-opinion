@@ -132,6 +132,16 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     banner.querySelector('.consent-inner').focus({ preventScroll: true });
   };
 
+  // Count clicks on phone links (only recorded once GA is loaded, i.e. after consent).
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="tel:"]');
+    if (a && window.gtag) {
+      const where = a.closest('header') ? 'menu' : a.closest('footer') ? 'footer'
+        : a.closest('.cta, .aside-card') ? 'kontaktboks' : 'indhold';
+      window.gtag('event', 'klik_telefon', { link_placering: where });
+    }
+  });
+
   document.querySelectorAll('[data-cookie-settings]').forEach((b) => {
     b.hidden = false;
     b.addEventListener('click', open);
