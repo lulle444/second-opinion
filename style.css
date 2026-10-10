@@ -987,3 +987,44 @@ a.read-more { text-decoration: none; }
 .testimonial-quote { padding-top: 44px; }
 .testimonial-quote::before { top: -14px; left: -4px; font-size: 4.6rem; }
 @media (max-width: 900px) { .testimonial-quote { padding-top: 44px; } }
+
+/* ---------- tighter vertical rhythm ---------- */
+.section { padding: 72px 0; }
+.section-head { margin-bottom: 36px; }
+.section-head h2 { margin-bottom: 0.4em; }
+.section-head p { margin-bottom: 0; }
+.eyebrow { margin-bottom: 0.8em; }
+.hero { padding: 56px 0 72px; }
+.page-hero { padding: 44px 0 56px; }
+.breadcrumb { margin-bottom: 20px; }
+.cta { padding: 72px 0; }
+.quote-band { padding: 64px 0; }
+.stats-grid li { padding: 32px 28px; }
+.prose h2 { margin-top: 1.5em; }
+.other-service { margin-top: 44px; }
+.ref-list li { padding: 18px 0; }
+.name-grid li { padding: 13px 0; }
+.testimonial { padding: 40px 48px; }
+.site-footer { padding: 52px 0 28px; }
+.footer-grid { padding-bottom: 32px; }
+
+@media (max-width: 900px) {
+  .section { padding: 52px 0; }
+  .hero { padding: 40px 0 52px; }
+  .hero-grid { gap: 40px; }
+  .about-grid { gap: 32px; }
+  .cta { padding: 56px 0; }
+  .quote-band { padding: 52px 0; }
+  .page-hero { padding: 32px 0 44px; }
+  .page-hero-grid { gap: 36px; }
+}
+@media (max-width: 760px) {
+  .section { padding: 44px 0; }
+  .section-head { margin-bottom: 28px; }
+  .stats-grid li { padding: 22px 16px; }
+  .service-card { padding: 30px 22px 26px; }
+  .testimonial { padding: 28px 20px; }
+  .highlights { gap: 10px; margin-top: 24px; }
+  .highlights li { padding: 16px 18px; }
+  .cta-card { padding: 24px; }
+}
