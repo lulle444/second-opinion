@@ -1500,3 +1500,40 @@ a.read-more { text-decoration: none; }
   .hero-card img { width: 40px; height: 40px; }
 }
 .hero-card { width: max-content; white-space: nowrap; }
+
+/* ---------- subpages v3 ---------- */
+.values { list-style: none; margin: 22px 0 8px; padding: 0; display: grid; gap: 14px; }
+.values li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; align-items: start; padding: 18px 20px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.values .step-icon { margin: 0; }
+.values strong { display: block; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+.values p { margin: 0; font-size: 0.95rem; }
+.steps + .case, .steps ~ .case { margin-top: 40px; }
+
+.tomgang { margin: 48px 0 8px; padding: 34px 34px 30px; background: linear-gradient(180deg, #f3eee3, #ece4d3); border: 1px solid var(--line); border-radius: var(--radius); }
+.tomgang h2 { margin-top: 0; }
+.tomgang-ways { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+.tomgang-ways > div { padding: 20px; background: var(--white); border-radius: var(--radius-sm); border: 1px solid var(--line); }
+.tomgang-ways .step-icon { margin-bottom: 12px; }
+.tomgang-ways strong { display: block; font-family: var(--serif); font-size: 1.08rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.tomgang-ways p { margin: 0; font-size: 0.93rem; line-height: 1.55; }
+@media (max-width: 640px) { .tomgang { padding: 26px 20px 22px; } .tomgang-ways { grid-template-columns: 1fr; } }
+
+.choice-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+.choice-card { padding: 26px 24px 22px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.choice-card .step-icon { margin-bottom: 16px; }
+.choice-card h3 { font-size: 1.25rem; margin: 0 0 8px; }
+.choice-card p { font-size: 0.95rem; line-height: 1.6; }
+.choice-card .tick-list { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 0.93rem; gap: 8px; }
+@media (max-width: 640px) { .choice-cards { grid-template-columns: 1fr; } }
+
+.clients-single .clients-row { grid-template-columns: 1fr; padding: 28px 30px; }
+.clients-single + .side-card-wide { margin-top: 28px; }
+.side-card-wide { flex-direction: row; align-items: stretch; padding: 0; }
+.side-card-wide .side-card-visual { flex: none; width: 300px; height: auto; min-height: 170px; margin: 0; border-bottom: 0; border-right: 1px solid var(--line); }
+.side-card-wide .side-card-visual img { max-height: 140px; }
+.side-card-wide .side-card-text { display: flex; flex-direction: column; justify-content: center; padding: 24px 30px; }
+@media (max-width: 700px) {
+  .side-card-wide { flex-direction: column; }
+  .side-card-wide .side-card-visual { width: auto; min-height: 0; height: 150px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .side-card-wide .side-card-text { padding: 20px 22px 22px; }
+}
