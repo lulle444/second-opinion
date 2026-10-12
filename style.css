@@ -1541,3 +1541,24 @@ a.read-more { text-decoration: none; }
 /* stats: shorter labels with a gold rule */
 .stats .stat-label { position: relative; margin-top: 14px; padding-top: 14px; font-size: 1rem; font-weight: 500; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.86); max-width: 22ch; }
 .stats .stat-label::before { content: ""; position: absolute; left: 0; top: 0; width: 28px; height: 2px; background: var(--gold-2); opacity: 0.7; }
+
+/* ---------- why a second opinion ---------- */
+.so-why-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 64px; align-items: center; }
+.so-why-text h2 { margin-bottom: 0.6em; }
+.so-why-text p { max-width: 60ch; }
+.so-why-proof { margin-top: 1.4em; padding-left: 18px; border-left: 2px solid var(--gold-2); color: var(--ink); }
+.so-why-proof strong { color: var(--navy); }
+.so-why-cards { display: grid; gap: 16px; }
+.so-why-card {
+  display: flex; flex-direction: column; padding: 26px 28px; text-decoration: none; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.so-why-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: #d4ccbb; }
+.so-why-card small { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-text); }
+.so-why-card strong { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--navy); line-height: 1.25; margin: 6px 0 8px; }
+.so-why-card span { font-size: 0.97rem; line-height: 1.6; color: var(--muted); }
+.so-why-card em { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; font-style: normal; font-weight: 600; font-size: 0.92rem; color: var(--navy); }
+.so-why-card em svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
+.so-why-card:hover em svg { transform: translateX(4px); }
+@media (max-width: 900px) { .so-why-grid { grid-template-columns: 1fr; gap: 32px; } }
