@@ -125,10 +125,19 @@
       <li>Vælg <strong>Fuld</strong> under <em>Nye meddelelser</em> og <strong>Kort</strong> under <em>Svar/videresendelser</em>, og tryk OK.</li>
     </ol>
 
-    <h2>Outlook på iPhone/Android</h2>
-    <ol>
-      <li>Mobilappen understøtter kun enkle signaturer. Skriv blot: <em>Jesper Norgart · Founder, The Second Opinion · +45 31 18 24 37</em> under Indstillinger → Signatur.</li>
-    </ol>
+    <h2>3. Kort tekstversion – til Outlook på mobilen</h2>
+    <p style="margin:0 0 10px;color:#586476;">Mobilappen understøtter kun ren tekst. Kopiér teksten, og indsæt den i Outlook-appen under <strong>Indstillinger → (din konto) → Signatur</strong>.</p>
+    <div class="card"><pre id="sig-text" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;white-space:pre-wrap;color:#1a2433;">Med venlig hilsen
+
+Jesper Norgart
+Founder · The Second Opinion
++45 31 18 24 37
+jn@thesecondopinion.dk
+thesecondopinion.dk</pre></div>
+    <div class="actions">
+      <button type="button" data-copy-text="sig-text">Kopiér tekstversion</button>
+      <span class="ok" data-ok="sig-text">Kopieret – indsæt den nu i Outlook-appen</span>
+    </div>
 
     <p class="note">Virker knappen ikke i din browser, så markér signaturen i den hvide boks med musen, kopiér (Ctrl+C / ⌘+C) og indsæt i Outlook.</p>
   </div>
@@ -145,6 +154,15 @@
         const r = document.createRange(); r.selectNodeContents(el);
         const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
         document.execCommand('copy'); sel.removeAllRanges();
+      }
+      document.querySelectorAll('[data-ok]').forEach(o => o.style.display = 'none');
+      document.querySelector(`[data-ok="${id}"]`).style.display = 'inline';
+    }));
+    document.querySelectorAll('[data-copy-text]').forEach(btn => btn.addEventListener('click', async () => {
+      const id = btn.dataset.copyText;
+      const txt = document.getElementById(id).innerText;
+      try { await navigator.clipboard.writeText(txt); } catch (e) {
+        const t = document.createElement('textarea'); t.value = txt; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove();
       }
       document.querySelectorAll('[data-ok]').forEach(o => o.style.display = 'none');
       document.querySelector(`[data-ok="${id}"]`).style.display = 'inline';
