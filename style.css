@@ -1562,3 +1562,15 @@ a.read-more { text-decoration: none; }
 .so-why-card em svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
 .so-why-card:hover em svg { transform: translateX(4px); }
 @media (max-width: 900px) { .so-why-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* e-mail */
+.cta-buttons { display: grid; gap: 10px; }
+.btn-ghost-light { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.35); }
+.btn-ghost-light:hover { border-color: var(--gold-2); color: var(--gold-2); }
+.btn svg { flex: none; }
+.btn-ghost-light svg { width: 18px; height: 18px; }
+.cta-mail { word-break: break-all; }
+.aside-mail { display: inline-flex; align-items: center; gap: 8px; margin: 6px 0 10px; font-size: 0.95rem; font-weight: 500; color: var(--navy); text-decoration: none; }
+.aside-mail svg { width: 16px; height: 16px; color: var(--gold-text); }
+.aside-mail:hover { text-decoration: underline; }
+.aside-contact .li-link { display: flex; }

@@ -142,6 +142,16 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     }
   });
 
+  // Count clicks on e-mail links the same way.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="mailto:"]');
+    if (a && window.gtag) {
+      const where = a.closest('header') ? 'menu' : a.closest('footer') ? 'footer'
+        : a.closest('.cta, .aside-card') ? 'kontaktboks' : 'indhold';
+      window.gtag('event', 'klik_mail', { link_placering: where });
+    }
+  });
+
   document.querySelectorAll('[data-cookie-settings]').forEach((b) => {
     b.hidden = false;
     b.addEventListener('click', open);
