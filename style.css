@@ -1593,3 +1593,6 @@ a.read-more { text-decoration: none; }
 @media (max-width: 900px) { .section { padding: 48px 0; } }
 @media (max-width: 560px) { .section { padding: 40px 0; } }
 .section-head { margin-bottom: 36px; }
+.brand img { height: 54px; }
+@media (max-width: 760px) { .brand img { height: 44px; } }
+.brand-footer img { height: 50px; width: auto; }
