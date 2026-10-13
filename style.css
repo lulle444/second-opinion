@@ -1603,3 +1603,7 @@ a.read-more { text-decoration: none; }
 @media (max-width: 1100px) { .brand img { height: 62px; } }
 @media (max-width: 760px) { .brand img { height: 54px; } }
 .brand-footer img { height: 66px; }
+.brand img { height: 70px; }
+@media (max-width: 1100px) { .brand img { height: 58px; } }
+@media (max-width: 760px) { .brand img { height: 48px; } }
+.brand-footer img { height: 62px; }
