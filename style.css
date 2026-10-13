@@ -1574,3 +1574,22 @@ a.read-more { text-decoration: none; }
 .aside-mail svg { width: 16px; height: 16px; color: var(--gold-text); }
 .aside-mail:hover { text-decoration: underline; }
 .aside-contact .li-link { display: flex; }
+
+/* CTA: more compact, less empty space */
+.cta { padding: 64px 0; }
+.cta-inner { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+.cta-card { padding: 28px 30px; }
+.cta-card dl { grid-template-columns: 1fr 1fr; gap: 16px 28px; margin-bottom: 22px; }
+.cta-phone { font-size: 1.7rem !important; }
+.cta-buttons { grid-template-columns: 1fr 1fr; }
+.cta-person { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+.cta-person img { width: 56px; height: 56px; border-radius: 50%; box-shadow: 0 0 0 2px var(--gold-2); }
+.cta-person strong { display: block; font-family: var(--serif); font-size: 1.1rem; color: #fff; }
+.cta-person span { font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); }
+@media (max-width: 960px) { .cta-inner { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 560px) { .cta-card dl, .cta-buttons { grid-template-columns: 1fr; } .cta { padding: 52px 0; } }
+/* tighter vertical rhythm overall */
+.section { padding: 60px 0; }
+@media (max-width: 900px) { .section { padding: 48px 0; } }
+@media (max-width: 560px) { .section { padding: 40px 0; } }
+.section-head { margin-bottom: 36px; }
