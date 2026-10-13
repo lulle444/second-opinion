@@ -17,6 +17,8 @@
     button:hover { background: #173350; }
     .ok { color: #2f6b3a; font-weight: 600; display: none; }
     h2 { font-family: Georgia, serif; color: #0f2236; font-size: 1.2rem; margin: 30px 0 8px; }
+    h2.first { margin-top: 0; }
+    .actions + h2 { margin-top: 8px; }
     ol { padding-left: 20px; line-height: 1.7; margin: 0; }
     .note { font-size: 0.92rem; color: #586476; margin-top: 26px; }
   </style>
@@ -24,11 +26,12 @@
 <body>
   <div class="page">
     <h1>Mailsignatur til Outlook</h1>
-    <p class="intro">Signaturen til Jesper Norgart, The Second Opinion. Kopiér den med knappen og indsæt den i Outlook.</p>
+    <p class="intro">Signaturen til Jesper Norgart, The Second Opinion. Der er to versioner: en fuld signatur med banner til nye mails og en kort til svar og videresendelser, så mailtråde ikke fyldes op.</p>
 
+    <h2 class="first">1. Fuld signatur – til nye mails</h2>
     <div class="card">
 <!-- SIGNATUR START -->
-<div id="signatur">
+<div id="sig-full">
 <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1a2433;">
   <tr>
     <td style="padding:0 0 14px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#1a2433;">Med venlig hilsen</td>
@@ -65,26 +68,61 @@
 </div>
 <!-- SIGNATUR SLUT -->
     </div>
-
     <div class="actions">
-      <button type="button" id="copy">Kopiér signatur</button>
-      <span class="ok" id="ok">Kopieret – indsæt den nu i Outlook</span>
+      <button type="button" data-copy="sig-full">Kopiér fuld signatur</button>
+      <span class="ok" data-ok="sig-full">Kopieret – indsæt den nu i Outlook</span>
+    </div>
+
+    <h2>2. Kort signatur – til svar og videresendelser</h2>
+    <div class="card">
+<!-- KORT SIGNATUR START -->
+<div id="sig-short">
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1a2433;">
+  <tr>
+    <td style="padding:0 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#1a2433;">Med venlig hilsen</td>
+  </tr>
+  <tr>
+    <td style="padding:0;">
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;">
+        <tr>
+          <td valign="middle" style="padding:0 14px 0 0;">
+            <img src="https://second-opinion-ruby.vercel.app/assets/signatur/jesper.png" width="56" height="56" alt="Jesper Norgart" style="display:block;width:56px;height:56px;border:0;" />
+          </td>
+          <td valign="middle" style="padding:0 0 0 14px;border-left:2px solid #d6bd86;">
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:20px;font-weight:bold;color:#0f2236;">Jesper Norgart</div>
+            <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#7d6025;font-weight:bold;letter-spacing:0.4px;">Founder · The Second Opinion</div>
+            <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#1a2433;">
+              <a href="tel:+4531182437" style="color:#1a2433;text-decoration:none;">+45 31 18 24 37</a> &nbsp;·&nbsp; <a href="mailto:jn@thesecondopinion.dk" style="color:#1a2433;text-decoration:none;">jn@thesecondopinion.dk</a> &nbsp;·&nbsp; <a href="https://thesecondopinion.dk" style="color:#1a2433;text-decoration:none;">thesecondopinion.dk</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- KORT SIGNATUR SLUT -->
+    </div>
+    <div class="actions">
+      <button type="button" data-copy="sig-short">Kopiér kort signatur</button>
+      <span class="ok" data-ok="sig-short">Kopieret – indsæt den nu i Outlook</span>
     </div>
 
     <h2>Nye Outlook og Outlook på nettet</h2>
     <ol>
-      <li>Klik på <strong>Kopiér signatur</strong> ovenfor.</li>
+      <li>Klik på <strong>Kopiér fuld signatur</strong> ovenfor.</li>
       <li>Åbn Outlook → <strong>Indstillinger</strong> (tandhjulet) → <strong>Konti</strong> → <strong>Signaturer</strong>.</li>
-      <li>Klik <strong>Ny signatur</strong>, kald den "The Second Opinion", og indsæt med <strong>Ctrl+V</strong> (Mac: <strong>⌘+V</strong>).</li>
-      <li>Vælg signaturen som standard for nye mails og svar/videresendelser, og gem.</li>
+      <li>Klik <strong>Ny signatur</strong>, kald den "Fuld", og indsæt med <strong>Ctrl+V</strong> (Mac: <strong>⌘+V</strong>). Gem.</li>
+      <li>Klik <strong>Kopiér kort signatur</strong>, opret endnu en signatur, kald den "Kort", indsæt og gem.</li>
+      <li>Under <em>Vælg standardsignaturer</em>: vælg <strong>Fuld</strong> til nye meddelelser og <strong>Kort</strong> til svar/videresendelser. Gem.</li>
     </ol>
 
     <h2>Klassisk Outlook på Windows</h2>
     <ol>
-      <li>Klik på <strong>Kopiér signatur</strong>.</li>
       <li>Outlook → <strong>Filer</strong> → <strong>Indstillinger</strong> → <strong>E-mail</strong> → <strong>Signaturer…</strong></li>
-      <li>Klik <strong>Ny</strong>, giv den et navn, og indsæt i feltet nederst med <strong>Ctrl+V</strong>.</li>
-      <li>Vælg den under <em>Nye meddelelser</em> og <em>Svar/videresendelser</em>, og tryk OK.</li>
+      <li>Klik <strong>Ny</strong>, kald den "Fuld", og indsæt den fulde signatur (kopiér først med knappen ovenfor).</li>
+      <li>Klik <strong>Ny</strong> igen, kald den "Kort", og indsæt den korte signatur.</li>
+      <li>Vælg <strong>Fuld</strong> under <em>Nye meddelelser</em> og <strong>Kort</strong> under <em>Svar/videresendelser</em>, og tryk OK.</li>
     </ol>
 
     <h2>Outlook på iPhone/Android</h2>
@@ -92,12 +130,12 @@
       <li>Mobilappen understøtter kun enkle signaturer. Skriv blot: <em>Jesper Norgart · Founder, The Second Opinion · +45 31 18 24 37</em> under Indstillinger → Signatur.</li>
     </ol>
 
-    <p class="note">Virker knappen ikke i din browser, så markér hele signaturen i den hvide boks med musen, kopiér (Ctrl+C / ⌘+C) og indsæt i Outlook.</p>
+    <p class="note">Virker knappen ikke i din browser, så markér signaturen i den hvide boks med musen, kopiér (Ctrl+C / ⌘+C) og indsæt i Outlook.</p>
   </div>
   <script>
-    document.getElementById('copy').addEventListener('click', async () => {
-      const el = document.getElementById('signatur');
-      const ok = document.getElementById('ok');
+    document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
+      const id = btn.dataset.copy;
+      const el = document.getElementById(id);
       try {
         await navigator.clipboard.write([new ClipboardItem({
           'text/html': new Blob([el.innerHTML], { type: 'text/html' }),
@@ -105,11 +143,12 @@
         })]);
       } catch (e) {
         const r = document.createRange(); r.selectNodeContents(el);
-        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
-        document.execCommand('copy'); s.removeAllRanges();
+        const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        document.execCommand('copy'); sel.removeAllRanges();
       }
-      ok.style.display = 'inline';
-    });
+      document.querySelectorAll('[data-ok]').forEach(o => o.style.display = 'none');
+      document.querySelector(`[data-ok="${id}"]`).style.display = 'inline';
+    }));
   </script>
 </body>
 </html>
