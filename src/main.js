@@ -7,7 +7,8 @@ if (navToggle && mainNav) {
   const setOpen = (open) => {
     mainNav.classList.toggle('open', open);
     navToggle.setAttribute('aria-expanded', String(open));
-    navToggle.setAttribute('aria-label', open ? 'Luk menu' : 'Åbn menu');
+    const en = document.documentElement.lang === 'en';
+    navToggle.setAttribute('aria-label', open ? (en ? 'Close menu' : 'Luk menu') : (en ? 'Open menu' : 'Åbn menu'));
   };
   navToggle.addEventListener('click', () => setOpen(!mainNav.classList.contains('open')));
   mainNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
@@ -106,8 +107,19 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     banner = document.createElement('div');
     banner.className = 'consent';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookie-samtykke');
-    banner.innerHTML =
+    const en = document.documentElement.lang === 'en';
+    banner.setAttribute('aria-label', en ? 'Cookie consent' : 'Cookie-samtykke');
+    banner.innerHTML = en ?
+      '<div class="consent-inner" tabindex="-1">' +
+        '<p class="consent-title">May we use statistics cookies?</p>' +
+        '<p>We would like to use Google Analytics to see how the website is used, so we can improve it. ' +
+        'This sets cookies, and the data is processed by Google. You can change your choice at any time under ' +
+        '"Cookie settings" at the bottom of the page. <a href="/privatlivspolitik#cookies">Read more (Danish)</a></p>' +
+        '<div class="consent-actions">' +
+          '<button type="button" class="btn btn-primary" data-consent="denied">Decline</button>' +
+          '<button type="button" class="btn btn-primary" data-consent="granted">Accept statistics</button>' +
+        '</div>' +
+      '</div>' :
       '<div class="consent-inner" tabindex="-1">' +
         '<p class="consent-title">Må vi bruge statistikcookies?</p>' +
         '<p>Vi vil gerne bruge Google Analytics til at se, hvordan hjemmesiden bruges, så vi kan gøre den bedre. ' +

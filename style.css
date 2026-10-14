@@ -1657,3 +1657,12 @@ a.read-more { text-decoration: none; }
     linear-gradient(180deg, rgba(10, 24, 40, 0.86), rgba(10, 24, 40, 0.8)),
     url(/assets/foto/havn-aften-1000.webp) center / cover no-repeat, var(--navy); }
 }
+.main-nav .lang-switch { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; }
+.main-nav .lang-switch:hover { color: var(--navy); border-color: var(--gold-2); }
+.service-card[id] { scroll-margin-top: calc(var(--header-h) + 20px); }
+@media (min-width: 961px) and (max-width: 1120px) {
+  .main-nav { gap: 18px; }
+  .main-nav a { font-size: 0.9rem; }
+  .main-nav .nav-cta { padding: 10px 16px; }
+  .brand img { height: 44px; }
+}
