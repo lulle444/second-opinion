@@ -1666,3 +1666,21 @@ a.read-more { text-decoration: none; }
   .main-nav .nav-cta { padding: 10px 16px; }
   .brand img { height: 44px; }
 }
+
+/* ---------- tighter vertical rhythm, round 2 ---------- */
+.hero { padding: 40px 0 36px; }
+.trust { margin-top: 32px; padding-top: 18px; }
+.section { padding: 48px 0; }
+.section-head { margin-bottom: 28px; }
+.page-hero { padding: 40px 0 44px; }
+.cta { padding: 52px 0; }
+.quote-band { padding: 64px 0; }
+.refs-compact { padding-block: 48px; }
+@media (max-width: 900px) {
+  .hero { padding: 28px 0 32px; }
+  .section { padding: 40px 0; }
+  .page-hero { padding: 28px 0 36px; }
+  .cta { padding: 44px 0; }
+  .quote-band { padding: 52px 0; }
+}
+@media (max-width: 560px) { .section { padding: 34px 0; } .trust { margin-top: 24px; } }
