@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://second-opinion-ruby.vercel.app/sitemap.xml
+Sitemap: https://thesecondopinion.dk/sitemap.xml
