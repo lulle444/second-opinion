@@ -1684,3 +1684,5 @@ a.read-more { text-decoration: none; }
   .quote-band { padding: 52px 0; }
 }
 @media (max-width: 560px) { .section { padding: 34px 0; } .trust { margin-top: 24px; } }
+.trust-label { max-width: 200px; line-height: 1.45; }
+@media (max-width: 900px) { .trust-label { max-width: none; } }
