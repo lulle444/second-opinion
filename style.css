@@ -1688,3 +1688,14 @@ a.read-more { text-decoration: none; }
 @media (max-width: 900px) { .trust-label { max-width: none; } }
 
 .hero-photo { object-position: 47% 50%; }
+
+/* consent categories (shown when marketing tags are configured) */
+.consent-opts { display: grid; gap: 10px; margin: 0 0 18px; }
+.consent-opt { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); font-size: 0.92rem; line-height: 1.45; color: var(--ink); cursor: pointer; }
+.consent-opt input { flex: none; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--navy); }
+.consent-opt input:disabled { opacity: 0.6; }
+.consent-opt strong { color: var(--navy); margin-right: 4px; }
+@media (max-width: 760px) {
+  .consent-inner { max-height: calc(100vh - 20px); overflow-y: auto; }
+  .consent-opt { padding: 10px 12px; font-size: 0.88rem; }
+}
