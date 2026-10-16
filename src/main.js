@@ -159,7 +159,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     text: HAS_MKT
       ? 'We would like to use cookies for statistics (Google Analytics) and, if you allow it, for marketing (Google Ads and LinkedIn), so we can improve the website and show relevant ads. The data is processed by Google and LinkedIn. You can change your choice at any time under "Cookie settings" at the bottom of the page.'
       : 'We would like to use Google Analytics to see how the website is used, so we can improve it. This sets cookies, and the data is processed by Google. You can change your choice at any time under "Cookie settings" at the bottom of the page.',
-    more: 'Read more (Danish)',
+    more: 'Read more',
     nec: 'Necessary', necD: 'Remembers your cookie choice. Always on.',
     stats: 'Statistics', statsD: 'Google Analytics – how the website is used.',
     mkt: 'Marketing', mktD: 'Google Ads and LinkedIn – measuring and showing relevant ads, also on other websites.',
@@ -194,7 +194,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     banner.innerHTML =
       '<div class="consent-inner" tabindex="-1">' +
         '<p class="consent-title">' + T.title + '</p>' +
-        '<p>' + T.text + ' <a href="/privatlivspolitik#cookies">' + T.more + '</a></p>' +
+        '<p>' + T.text + ' <a href="' + (en ? '/privacy#cookies' : '/privatlivspolitik#cookies') + '">' + T.more + '</a></p>' +
         (HAS_MKT ?
           '<div class="consent-opts">' +
             opt('', T.nec, T.necD, true, true) +
@@ -263,6 +263,22 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   const status = form.querySelector('.cf-status');
   const btn = form.querySelector('button[type="submit"]');
   const say = (msg, kind) => { status.textContent = msg; status.dataset.kind = kind || ''; };
+  const en = document.documentElement.lang === 'en';
+  const M = en ? {
+    invalid: 'Please fill in the fields marked with *.',
+    off: 'The form is not active yet – call +45 31 18 24 37 or email jn@thesecondopinion.dk.',
+    sending: 'Sending …',
+    ok: 'Thank you for your message. Jesper Norgart will get back to you as soon as possible.',
+    fail: 'The message could not be sent. Please try again or call +45 31 18 24 37.',
+    subj: 'New enquiry (English site)',
+  } : {
+    invalid: 'Udfyld venligst de felter, der er markeret med *.',
+    off: 'Formularen er ikke aktiv endnu – ring på 31 18 24 37 eller skriv til jn@thesecondopinion.dk.',
+    sending: 'Sender …',
+    ok: 'Tak for din besked. Jesper Norgart vender tilbage hurtigst muligt.',
+    fail: 'Beskeden kunne ikke sendes. Prøv igen, eller ring på 31 18 24 37.',
+    subj: 'Ny henvendelse',
+  };
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const key = form.dataset.key;
@@ -270,16 +286,16 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
       form.classList.add('was-validated');
       const bad = form.querySelector(':invalid');
       if (bad) bad.focus();
-      say('Udfyld venligst de felter, der er markeret med *.', 'error');
+      say(M.invalid, 'error');
       return;
     }
-    if (!key) { say('Formularen er ikke aktiv endnu – ring på 31 18 24 37 eller skriv til jn@thesecondopinion.dk.', 'error'); return; }
+    if (!key) { say(M.off, 'error'); return; }
     const data = Object.fromEntries(new FormData(form).entries());
     if (data.botcheck) return;
     data.access_key = key;
-    data.subject = 'Ny henvendelse (' + data.rolle + ') fra ' + data.name + (data.virksomhed ? ', ' + data.virksomhed : '');
+    data.subject = M.subj + ' (' + data.rolle + ') fra ' + data.name + (data.virksomhed ? ', ' + data.virksomhed : '');
     btn.disabled = true;
-    say('Sender …');
+    say(M.sending);
     try {
       // Sent as FormData (a "simple" CORS request, so no preflight is needed).
       const body = new FormData();
@@ -289,10 +305,10 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
       if (!res.ok || !json.success) throw new Error(json.message || res.status);
       form.reset();
       form.classList.remove('was-validated');
-      say('Tak for din besked. Jesper Norgart vender tilbage hurtigst muligt.', 'ok');
-      if (window.gtag) window.gtag('event', 'kontaktformular', { link_placering: 'kontaktside' });
+      say(M.ok, 'ok');
+      if (window.gtag) window.gtag('event', 'kontaktformular', { link_placering: en ? 'contact_en' : 'kontaktside' });
     } catch (err) {
-      say('Beskeden kunne ikke sendes. Prøv igen, eller ring på 31 18 24 37.', 'error');
+      say(M.fail, 'error');
     } finally {
       btn.disabled = false;
     }
