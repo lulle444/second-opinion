@@ -254,3 +254,48 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   if (c) apply(c);
   if (!decided(c)) open();
 })();
+
+// Contact form (/kontakt): posts to Web3Forms, which forwards the message by e-mail.
+// The access key sits on the form as data-key; without a key the form points people to phone/e-mail.
+(() => {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const status = form.querySelector('.cf-status');
+  const btn = form.querySelector('button[type="submit"]');
+  const say = (msg, kind) => { status.textContent = msg; status.dataset.kind = kind || ''; };
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const key = form.dataset.key;
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      const bad = form.querySelector(':invalid');
+      if (bad) bad.focus();
+      say('Udfyld venligst de felter, der er markeret med *.', 'error');
+      return;
+    }
+    if (!key) { say('Formularen er ikke aktiv endnu – ring på 31 18 24 37 eller skriv til jn@thesecondopinion.dk.', 'error'); return; }
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (data.botcheck) return;
+    data.access_key = key;
+    data.subject = 'Ny henvendelse (' + data.rolle + ') fra ' + data.name + (data.virksomhed ? ', ' + data.virksomhed : '');
+    btn.disabled = true;
+    say('Sender …');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.success) throw new Error(json.message || res.status);
+      form.reset();
+      form.classList.remove('was-validated');
+      say('Tak for din besked. Jesper Norgart vender tilbage hurtigst muligt.', 'ok');
+      if (window.gtag) window.gtag('event', 'kontaktformular', { link_placering: 'kontaktside' });
+    } catch (err) {
+      say('Beskeden kunne ikke sendes. Prøv igen, eller ring på 31 18 24 37.', 'error');
+    } finally {
+      btn.disabled = false;
+    }
+  });
+})();
