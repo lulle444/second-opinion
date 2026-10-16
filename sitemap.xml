@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://thesecondopinion.dk/</loc><priority>1.0</priority></url>
-  <url><loc>https://thesecondopinion.dk/udlejerraadgivning</loc><priority>0.9</priority></url>
-  <url><loc>https://thesecondopinion.dk/lejerraadgivning</loc><priority>0.9</priority></url>
-  <url><loc>https://thesecondopinion.dk/om-jesper-norgart</loc><priority>0.8</priority></url>
-  <url><loc>https://thesecondopinion.dk/en</loc><priority>0.7</priority></url>
-  <url><loc>https://thesecondopinion.dk/privatlivspolitik</loc><priority>0.3</priority></url>
+  <url><loc>https://thesecondopinion.dk/</loc><lastmod>2026-10-16</lastmod><priority>1.0</priority></url>
+  <url><loc>https://thesecondopinion.dk/udlejerraadgivning</loc><lastmod>2026-10-16</lastmod><priority>0.9</priority></url>
+  <url><loc>https://thesecondopinion.dk/lejerraadgivning</loc><lastmod>2026-10-16</lastmod><priority>0.9</priority></url>
+  <url><loc>https://thesecondopinion.dk/om-jesper-norgart</loc><lastmod>2026-10-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thesecondopinion.dk/en</loc><lastmod>2026-10-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://thesecondopinion.dk/privatlivspolitik</loc><lastmod>2026-10-16</lastmod><priority>0.3</priority></url>
 </urlset>
