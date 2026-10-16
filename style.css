@@ -1699,3 +1699,5 @@ a.read-more { text-decoration: none; }
   .consent-inner { max-height: calc(100vh - 20px); overflow-y: auto; }
   .consent-opt { padding: 10px 12px; font-size: 0.88rem; }
 }
+.case-source a { color: rgba(255, 255, 255, 0.85); text-decoration: underline; text-underline-offset: 2px; }
+.case-source a:hover { color: #fff; }
