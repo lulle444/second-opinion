@@ -281,11 +281,10 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     btn.disabled = true;
     say('Sender …');
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(data),
-      });
+      // Sent as FormData (a "simple" CORS request, so no preflight is needed).
+      const body = new FormData();
+      Object.keys(data).forEach((k) => body.append(k, data[k]));
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.success) throw new Error(json.message || res.status);
       form.reset();
