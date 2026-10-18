@@ -26,7 +26,7 @@
 <body>
   <div class="page">
     <h1>Mailsignatur til Outlook</h1>
-    <p class="intro">Signaturen til Jesper Norgart, The Second Opinion. Der er to versioner: en fuld signatur med banner til nye mails og en kort til svar og videresendelser, så mailtråde ikke fyldes op.</p>
+    <p class="intro">Signaturen til Jesper Norgart, The Second Opinion. Der er en fuld signatur med banner til nye mails, en kort til svar og videresendelser og en mobilsignatur til telefonen.</p>
 
     <h2 class="first">1. Fuld signatur – til nye mails</h2>
     <div class="card">
@@ -94,7 +94,7 @@
             <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#1a2433;">
               <a href="tel:+4531182437" style="color:#1a2433;text-decoration:none;">+45 31 18 24 37</a> &nbsp;·&nbsp; <a href="mailto:jn@thesecondopinion.dk" style="color:#1a2433;text-decoration:none;">jn@thesecondopinion.dk</a> &nbsp;·&nbsp; <a href="https://thesecondopinion.dk" style="color:#1a2433;text-decoration:none;">thesecondopinion.dk</a>
             </div>
-            <div style="padding-top:8px;"><a href="https://thesecondopinion.dk" style="text-decoration:none;border:0;"><img src="https://second-opinion-ruby.vercel.app/assets/signatur/logo-v6.png" width="163" height="40" alt="The Second Opinion" style="display:block;width:130px;height:27px;border:0;" /></a></div>
+            <div style="padding-top:8px;"><a href="https://thesecondopinion.dk" style="text-decoration:none;border:0;"><img src="https://second-opinion-ruby.vercel.app/assets/signatur/logo-v6.png" width="130" height="32" alt="The Second Opinion" style="display:block;width:130px;height:32px;border:0;" /></a></div>
           </td>
         </tr>
       </table>
@@ -126,20 +126,49 @@
       <li>Vælg <strong>Fuld</strong> under <em>Nye meddelelser</em> og <strong>Kort</strong> under <em>Svar/videresendelser</em>, og tryk OK.</li>
     </ol>
 
-    <h2>3. Kort tekstversion – til Outlook på mobilen</h2>
-    <p style="margin:0 0 10px;color:#586476;">Mobilappen understøtter kun ren tekst. Kopiér teksten, og indsæt den i Outlook-appen under <strong>Indstillinger → (din konto) → Signatur</strong>.</p>
-    <div class="card"><pre id="sig-text" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;white-space:pre-wrap;color:#1a2433;">Med venlig hilsen
+    <h2>3. Mobilsignatur – til Outlook-appen og iPhone Mail</h2>
+    <p style="margin:0 0 10px;color:#586476;">Smal og overskuelig, så den ser pæn ud på en telefonskærm. Telefonnummer, mail og website kan trykkes på.</p>
+    <div class="card" style="max-width:340px;">
+<!-- MOBILSIGNATUR START -->
+<div id="sig-mobile">
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1a2433;">
+  <tr><td style="padding:0 0 14px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#1a2433;">Med venlig hilsen</td></tr>
+  <tr><td style="padding:0;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:22px;font-weight:bold;color:#0f2236;">Jesper Norgart</td></tr>
+  <tr><td style="padding:2px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;font-weight:bold;letter-spacing:0.8px;color:#7d6025;">FOUNDER · THE SECOND OPINION</td></tr>
+  <tr><td style="padding:10px 0 10px 0;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="36" height="2" style="width:36px;height:2px;line-height:2px;font-size:1px;background:#d6bd86;">&nbsp;</td></tr></table></td></tr>
+  <tr><td style="padding:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;"><a href="tel:+4531182437" style="color:#0f2236;text-decoration:none;">+45 31 18 24 37</a></td></tr>
+  <tr><td style="padding:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;"><a href="mailto:jn@thesecondopinion.dk" style="color:#0f2236;text-decoration:none;">jn@thesecondopinion.dk</a></td></tr>
+  <tr><td style="padding:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;"><a href="https://thesecondopinion.dk" style="color:#0f2236;text-decoration:none;">thesecondopinion.dk</a></td></tr>
+  <tr><td style="padding:12px 0 0 0;"><a href="https://thesecondopinion.dk" style="text-decoration:none;border:0;"><img src="https://thesecondopinion.dk/assets/signatur/logo-v6.png" width="122" height="30" alt="The Second Opinion" style="display:block;width:122px;height:30px;border:0;" /></a></td></tr>
+</table>
+</div>
+<!-- MOBILSIGNATUR SLUT -->
+    </div>
+    <div class="actions">
+      <button type="button" data-copy="sig-mobile">Kopiér mobilsignatur</button>
+      <span class="ok" data-ok="sig-mobile">Kopieret – indsæt den nu på telefonen</span>
+    </div>
+
+    <h2>Sådan sætter du den ind på telefonen</h2>
+    <p style="margin:0 0 6px;color:#586476;">Åbn denne side <strong>på telefonen</strong> (fx i Safari), tryk <strong>Kopiér mobilsignatur</strong>, og indsæt den:</p>
+    <ol>
+      <li><strong>Outlook-appen:</strong> tryk på dit profilbillede → tandhjulet → <strong>Signatur</strong> (eller vælg kontoen → Signatur). Slå evt. "Pr. konto" til, slet den gamle tekst, og indsæt.</li>
+      <li><strong>iPhone Mail:</strong> Indstillinger → Apps → Mail → <strong>Signatur</strong>. Slet "Sendt fra min iPhone", og indsæt. Hvis formateringen forsvinder, så ryst telefonen med det samme og vælg <strong>Fortryd ændring af attributter</strong>.</li>
+    </ol>
+
+    <h2>4. Ren tekstversion – hvis formateringen ikke virker</h2>
+    <p style="margin:0 0 10px;color:#586476;">Nogle telefoner viser kun ren tekst. Så brug denne.</p>
+    <div class="card" style="max-width:340px;"><pre id="sig-text" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;white-space:pre-wrap;color:#1a2433;">Med venlig hilsen
 
 Jesper Norgart
-Founder  |  The Second Opinion
-————————————
-T   +45 31 18 24 37
-E   jn@thesecondopinion.dk
-W  thesecondopinion.dk</pre></div>
-    <p style="margin:12px 0 0;color:#586476;font-size:.92rem;"><strong>Tip til iPhone:</strong> Outlook-appen kan ofte bevare formateringen, hvis du åbner denne side i Safari på telefonen, markerer den <em>korte signatur</em> (punkt 2) med fingeren, kopierer og indsætter den i signaturfeltet. Virker det ikke pænt, så brug tekstversionen.</p>
+Founder · The Second Opinion
+
++45 31 18 24 37
+jn@thesecondopinion.dk
+thesecondopinion.dk</pre></div>
     <div class="actions">
       <button type="button" data-copy-text="sig-text">Kopiér tekstversion</button>
-      <span class="ok" data-ok="sig-text">Kopieret – indsæt den nu i Outlook-appen</span>
+      <span class="ok" data-ok="sig-text">Kopieret – indsæt den nu på telefonen</span>
     </div>
 
     <p class="note">Virker knappen ikke i din browser, så markér signaturen i den hvide boks med musen, kopiér (Ctrl+C / ⌘+C) og indsæt i Outlook.</p>
