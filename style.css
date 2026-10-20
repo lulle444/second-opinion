@@ -1778,3 +1778,21 @@ a.read-more { text-decoration: none; }
   .cta-card dl > div:nth-child(n+3) { display: none; }
   .cta-card dl { margin-bottom: 18px; gap: 12px; }
 }
+
+/* testimonial: collapsed on small screens with a "read more" toggle */
+.testimonial-more { display: none; }
+@media (max-width: 640px) {
+  .testimonial-quote:not(.is-open) { max-height: 9.6em; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent); mask-image: linear-gradient(180deg, #000 55%, transparent); }
+  .testimonial-more { display: inline-flex; margin-top: 10px; padding: 0; background: none; border: 0; font: inherit; font-size: 0.95rem; font-weight: 600; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+}
+@media (max-width: 640px) {
+  .testimonial-quote { padding-top: 30px; }
+  .testimonial-quote::before { top: -8px; font-size: 4rem; }
+  .testimonial-quote:not(.is-open) { max-height: 11.5em; }
+}
+@media (max-width: 640px) {
+  .testimonial-quote { padding: 0; }
+  .testimonial-quote p { padding-left: 0; margin-left: 0; }
+  .testimonial-quote::before { display: none; }
+  .testimonial-quote:not(.is-open) { max-height: 10em; }
+}

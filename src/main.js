@@ -314,3 +314,14 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     }
   });
 })();
+
+// Testimonial "read more" (only visible on small screens).
+document.querySelectorAll('.testimonial-more').forEach((btn) => {
+  const quote = btn.parentElement.querySelector('.testimonial-quote');
+  const en = document.documentElement.lang === 'en';
+  btn.addEventListener('click', () => {
+    const open = quote.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? (en ? 'Show less' : 'Vis mindre') : (en ? 'Read the full testimonial' : 'Læs hele udtalelsen');
+  });
+});
