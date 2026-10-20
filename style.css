@@ -1751,8 +1751,8 @@ a.read-more { text-decoration: none; }
 @media (max-width: 640px) {
   .section { padding: 36px 0; }
   .section-head { margin-bottom: 28px; }
-  .hero-actions { flex-wrap: nowrap; gap: 10px; margin-top: 24px; }
-  .hero-actions .btn { padding: 13px 18px; font-size: 0.95rem; white-space: nowrap; }
+  .hero .hero-actions { flex-wrap: nowrap; gap: 10px; margin-top: 24px; }
+  .hero .hero-actions .btn { padding: 13px 18px; font-size: 0.95rem; white-space: nowrap; }
   .service-visual { height: 130px; margin-bottom: 20px; padding: 0; overflow: hidden; }
   .service-visual img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
   .ref-list.ref-list-single { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
@@ -1771,7 +1771,7 @@ a.read-more { text-decoration: none; }
   /* front page: drop repeated content on small screens (it is all still on the subpages) */
   .so-why-cards { display: none; }
   .service-card .tick-list { display: none; }
-  .about-portrait { display: none; }
+  #om .about-portrait { display: none; }
 }
 @media (max-width: 640px) {
   .ref-pills li:nth-child(n+7) { display: none; }
