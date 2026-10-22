@@ -1796,3 +1796,6 @@ a.read-more { text-decoration: none; }
   .testimonial-quote::before { display: none; }
   .testimonial-quote:not(.is-open) { max-height: 10em; }
 }
+/* newest press item spans the full row */
+.press-item:first-child { grid-column: 1 / -1; }
+.press-item:first-child .press-title { font-size: 1.35rem; }
