@@ -1,14 +1,8 @@
-# Second Opinion
+# The Second Opinion
 
-Statisk hjemmeside for Second Opinion (rådgivning om kontorejendomme).
+Statisk hjemmeside for The Second Opinion (uafhængig rådgivning om kontorejendomme), https://thesecondopinion.dk.
 
-- `index.html` — forside
-- `ejere.html` — Rådgivning til ejere af kontorejendomme (`/ejere`)
-- `lejere.html` — Rådgivning til kontorlejere (`/lejere`)
-- `style.css`, `src/main.js`, `assets/`
+Ingen build: HTML, `style.css`/`style.min.css`, `src/main.js` og `assets/`. Lokal forhåndsvisning: `node server.js`.
 
-Ingen build. Lokal forhåndsvisning: `node server.js` → http://localhost:5173
-
-Deployes på Vercel (projekt `second-opinion`, forbundet til dette repo) fra `main`; `vercel.json` slår clean URLs til.
-
-Pushes til `main` deployes automatisk til https://second-opinion-ruby.vercel.app.
+Hosting: Cloudflare Pages (projekt `second-opinion`, forbundet til dette repo). Pushes til `main` deployes automatisk.
+Sikkerheds-headers ligger i `_headers`, omdirigeringer i `_redirects`. DNS og mail-records ligger i Cloudflare.

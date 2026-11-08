@@ -2,3 +2,9 @@
 /ejere /udlejerraadgivning 301
 /lejere /lejerraadgivning 301
 /om-jesper /om-jesper-norgart 301
+# development files are not part of the site
+/server.js / 301
+/README.md / 301
+/vercel.json / 301
+/.gitignore / 301
+/.vercelignore / 301
