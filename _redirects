@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects (mirrors vercel.json)
+/ejere /udlejerraadgivning 301
+/lejere /lejerraadgivning 301
+/om-jesper /om-jesper-norgart 301
